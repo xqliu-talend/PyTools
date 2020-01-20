@@ -15,12 +15,12 @@ def main():
         conf_file = sys.argv[2]
     cfg = ConfigParser()
     cfg.read(conf_file)
-    container_intervals = cfg.get('containers', 'container_interval').strip().split('\n')
+    container_intervals = cfg.get('containers', 'container_interval').strip().split('\n') # one docker instance per line
     the_time = datetime.datetime.now()
     print(f'Command: docker {d_cmd} ...')
     print(f'Start at: {the_time}')
     for temp in container_intervals:
-        con_int = temp.strip().split(':')
+        con_int = temp.strip().split(':') # semicolon as separator, example: docker_instance_name:interval_time
         exe_cmd = f'docker {d_cmd} {con_int[0]}'
         subprocess.call(exe_cmd, shell=True)
         print('processing...')
