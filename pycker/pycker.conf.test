@@ -1,0 +1,5 @@
+[containers]
+container_interval =
+    db2_11:1
+    elasticsearch:2
+    sql_server_sun:3

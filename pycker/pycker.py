@@ -24,10 +24,10 @@ def main():
         exe_cmd = f'docker {d_cmd} {con_int[0]}'
         subprocess.call(exe_cmd, shell=True)
         print('processing...')
-        if d_cmd == 'stop':
-            time.sleep(1)
-        else:
+        if d_cmd == 'start':
             time.sleep(int(con_int[1]))
+        else:
+            time.sleep(1)
     the_time2 = datetime.datetime.now()
     print(f'End at: {the_time2}; Duration {the_time2 - the_time}')
 
